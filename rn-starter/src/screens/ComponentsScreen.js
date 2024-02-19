@@ -6,7 +6,7 @@ const ComponentsScreen = () => {
     const color = { color: 'red' };
     const hello = <Text>Hello again MSP!</Text>;
     const gettingStarted = <Text style={styles.headerStyle}>Getting started with React Native</Text>;
-    const myName = 'Henry'
+    const myName = 'Henry';
 
     return (
         <View>
