@@ -15,6 +15,7 @@ export default () => {
                 }
             });
             setErrorMessage('');
+            console.log(response.data.businesses[0]['price']);
             setResults(response.data.businesses);
         } catch (err) {
             setErrorMessage('Something went wrong');
