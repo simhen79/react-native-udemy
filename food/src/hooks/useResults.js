@@ -11,11 +11,11 @@ export default () => {
                 params: {
                     term: searchTerm,
                     location: "san jose",
-                    limit: 50
+                    limit: 50,
+                    price: "1,2,3",
                 }
             });
             setErrorMessage('');
-            console.log(response.data.businesses[0]['price']);
             setResults(response.data.businesses);
         } catch (err) {
             setErrorMessage('Something went wrong');
