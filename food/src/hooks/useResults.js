@@ -12,7 +12,7 @@ export default () => {
                     term: searchTerm,
                     location: "san jose",
                     limit: 50,
-                    price: "1,2,3",
+                    price: "1,2,3,4",
                 }
             });
             setErrorMessage('');
