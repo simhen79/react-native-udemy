@@ -23,10 +23,22 @@ const SearchScreen = () => {
             />
             {errorMessage ? <Text>{errorMessage}</Text>: null}
             <ScrollView style={ {marginBottom: 15} } showsVerticalScrollIndicator={false}>
-                <ResultsList title="Cost Effective" results={ filterResultsByPrice('$') } />
-                <ResultsList title="Bit Pricier" results={ filterResultsByPrice('$$') } />
-                <ResultsList title="Big Spender" results={ filterResultsByPrice('$$$') } />
-                <ResultsList title="Extravagant" results={ filterResultsByPrice('$$$$') } />
+                <ResultsList
+                    title="Cost Effective"
+                    results={ filterResultsByPrice('$') }
+                />
+                <ResultsList
+                    title="Bit Pricier"
+                    results={ filterResultsByPrice('$$') }
+                />
+                <ResultsList
+                    title="Big Spender"
+                    results={ filterResultsByPrice('$$$') }
+                />
+                <ResultsList
+                    title="Extravagant"
+                    results={ filterResultsByPrice('$$$$') }
+                />
             </ScrollView>
         </>
     )
