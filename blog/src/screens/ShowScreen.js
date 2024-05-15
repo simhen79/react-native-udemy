@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet } from 'react-native';
+import { Divider } from '@rneui/themed';
 import { Context } from "../context/BlogContext";
 
 const ShowScreen = ({ navigation }) => {
@@ -11,6 +12,8 @@ const ShowScreen = ({ navigation }) => {
     return (
         <View>
             <Text>{ blogPost.title }</Text>
+            <Divider />
+            <Text>{ blogPost.content }</Text>
         </View>
     );
 }
