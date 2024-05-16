@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Divider } from '@rneui/themed';
 import { Context } from "../context/BlogContext";
+import { Feather } from "@expo/vector-icons";
 
 const ShowScreen = ({ navigation }) => {
 
@@ -17,6 +18,16 @@ const ShowScreen = ({ navigation }) => {
         </View>
     );
 }
+
+ShowScreen.navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('Edit', { id: navigation.getParam('id') })} >
+                <Feather name="edit" size={30} />
+            </TouchableOpacity>
+        ),
+    }
+};
 
 const styles = StyleSheet.create({});
 
