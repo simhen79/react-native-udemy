@@ -12,7 +12,7 @@ const EditScreen = ({ navigation }) => {
 
     return <BlogPostForm 
         onSubmit={(title, content) => {
-            updateBlogPost(id, title, content, () => navigation.navigate('Show', { id }));
+            updateBlogPost(id, title, content, () => navigation.pop());
         }} 
         blogPost={ blogPost }
     />
