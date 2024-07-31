@@ -6,8 +6,18 @@ import { Feather } from "@expo/vector-icons";
 const IndexScreen = ({ navigation }) => {
     const {state, deleteBlogPost, getBlogPosts} = useContext(Context);
 
-    useEffect(() => {
+    useEffect(() => { 
         getBlogPosts();
+        
+        const listener = navigation.addListener('didFocus', () => {
+            getBlogPosts();
+        });
+
+        // This function is invoked when the component is completely removed and not just hidden
+        return () => {
+            listener.remove();
+        };
+
     }, []);
 
     return (
