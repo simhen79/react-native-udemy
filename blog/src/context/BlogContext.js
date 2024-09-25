@@ -23,7 +23,7 @@ const getBlogPosts = (dispatch) => {
     }
 }
 
-const addBlogPost = (dispatch) => {
+const addBlogPost = () => {
     return async (title, content, callBack) => {
         await jsonServer.post('/blogposts', {title, content});
         if (callBack) {
@@ -40,7 +40,8 @@ const deleteBlogPost = (dispatch) => {
 }
 
 const updateBlogPost = (dispatch) => {
-    return (id, title, content, callBack) => {
+    return async (id, title, content, callBack) => {
+        await jsonServer.put(`/blogposts/${id}`, {title, content});
         dispatch({ type: 'update_blogpost', payload: {id, title, content} })
         if (callBack) {
             callBack();
